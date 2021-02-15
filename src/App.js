@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+
 import Navbar from "../src/components/Navbar";
 import Planets from "../src/components/Planets";
 import People from "../src/components/People";
@@ -17,6 +19,7 @@ function App() {
           {page === "Planets" ? <Planets /> : <People />}
         </div>
       </div>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
